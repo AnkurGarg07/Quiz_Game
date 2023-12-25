@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to right,
+    rgb(15, 12, 41),
+    rgb(48, 43, 99),
+    rgb(36, 36, 62)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories {
+  width: 40vw;
+  height: 60vh;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.categories .playerWelcome {
+  padding-top: 10px;
+  font-size: 25px;
+  color: white;
+}
+.categoryHeading {
+  width: 100%;
+  font-size: 26px;
+  padding: 10px 0px;
+  text-align: center;
+  color: white;
+}
+.categoryList {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.categoryList .category{
+  height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+
+}
