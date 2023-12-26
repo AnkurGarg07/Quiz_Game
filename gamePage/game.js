@@ -193,6 +193,7 @@ function cheatClicked() {
     correctAnswersGiven++;
 
     // Set cheatUsed to true to prevent further use
+    cheat.style.opacity="0.5";
     cheatUsed = true;
 
     // Reset the background color for all options after a short delay
