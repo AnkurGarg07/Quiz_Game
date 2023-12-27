@@ -16,6 +16,7 @@ const score = document.querySelector(".score");
 const quitBtn = document.querySelector(".quit");
 const newGamebtn = document.querySelector(".newGame");
 const timeIncreasePowerUp = document.querySelector(".timeIncrease");
+const cheat = document.querySelector(".cheat");
 let numberOfQuestions = 0;
 let correctAnswersGiven = 0;
 let correctAnswer;
@@ -25,7 +26,6 @@ let timerInnerHtml = timer.innerHTML;
 let timeIncreased = false;
 let cheatUsed = false;
 let option = document.querySelectorAll(".option");
-const cheat = document.querySelector(".cheat");
 
 //Defining varaibles for storing different categories apiURL
 
@@ -208,7 +208,7 @@ function cheatClicked() {
   }
 }
 
-cheat.addEventListener("click", cheatClicked);
+cheat.addEventListener("click", cheatClicked);//show the correct answer
 quitBtn.addEventListener("click", quitGame); //redirect you to home page
 newGamebtn.addEventListener("click", startNewGame); //redirect you to home page
 timeIncreasePowerUp.addEventListener("click", increaseTime); //icrease time power up
