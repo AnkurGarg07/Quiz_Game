@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Let's Conquer - Quiz Wizard</title>
+    <link rel="shortcut icon" href="https://media-public.canva.com/82cDI/MAE0WC82cDI/1/tl.png" type="image/x-icon">
     <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
     <div class="main">
         <div class="quizBox">
             <div class="pageHead">Quiz time</div>
             <div class="question">
-                <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ab? Magnam optio, voluptate harum reprehenderit fugiat perferendis qui natus quidem. -->
-
+                <span class='round'>&#8635;</span>
             </div>
             <div class="options">
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
+                <button class="option"><span class='round'>&#8635;</span></button>
+                <button class="option"><span class='round'>&#8635;</span></button>
+                <button class="option"><span class='round'>&#8635;</span></button>
+                <button class="option"><span class='round'>&#8635;</span></button>
             </div>
             <div class="extra">
                 <div class="powerUp">
                     <span>Power Ups:</span>
-                    <button class="timeIncrease"><img src="../assets/IncreaseTime.png" alt=""></button>
-                    <button class="cheat"><img src="../assets/cheat.png" alt=""></button>
+                    <button class="timeIncrease">10</button>
+                    <button class="cheat">Lifeline: 50/50</button>
                 </div>
-                <button class="quit">Quit Game</button>
-                
                 <div class="time">
                     <span>Time:</span>
-                <span class="timer">10</span>
+                    <span class="timer">10</span>
                 </div>
             </div>
+            <button class="quit">Quit Game</button>
             <div class="score">Your score was 10</div>
             <button class="newGame">Start new game</button>
         </div>
     </div>
     <script src="game.js"></script>
 </body>
+
 </html>

@@ -30,7 +30,7 @@ const cheat = document.querySelector(".cheat");
 //Defining varaibles for storing different categories apiURL
 
 let generalKnowledgeUrl =
-    "https://opentdb.com/api.php?amount=1&category=9&type=multiple",
+  "https://opentdb.com/api.php?amount=1&category=9&type=multiple",
   HistoryUrl = "https://opentdb.com/api.php?amount=1&category=23&type=multiple",
   PoliticsUrl =
     "https://opentdb.com/api.php?amount=1&category=24&type=multiple",
@@ -42,10 +42,10 @@ let generalKnowledgeUrl =
 
 let categoryMap = {
   "General Knowledge": generalKnowledgeUrl,
-  History: HistoryUrl,
-  Politics: PoliticsUrl,
-  Geography: GeographyUrl,
-  Sports: SportsUrl,
+  "History": HistoryUrl,
+  "Politics": PoliticsUrl,
+  "Geography": GeographyUrl,
+  "Sports": SportsUrl,
 };
 
 //Fetching data from api for the selected category
@@ -68,6 +68,9 @@ async function fetchData(apiUrl, callback) {
       newGamebtn.style.display = "flex";
       timeIncreased = true;
       cheatUsed = true;
+      timer.innerHTML=0;
+      questionBox.style.display='none';
+      quizOptions.style.display='none';
     } else {
       showQuestion(fetchedData.results[0]);
     }
@@ -92,6 +95,7 @@ function showQuestion(data) {
   // Loop through each container and insert an option
   option.forEach((container, index) => {
     container.innerHTML = optionList[index];
+    container.classList.remove('loading');
   });
   timer.innerHTML = 10;
   startTimer(10);
@@ -104,7 +108,9 @@ function startTimer(initialValue = 10) {
   let timerNum = initialValue;
   interval = setInterval(() => {
     timerNum--;
-    timer.innerHTML = timerNum;
+    if (timerNum !== -1) {
+      timer.innerHTML = timerNum;
+    }
     if (timerNum === -1) {
       clearInterval(interval);
       fetchData(categoryMap[selectedCategory]);
@@ -116,7 +122,7 @@ function startTimer(initialValue = 10) {
 
 //function to check if selected option is correct or not
 quizOptions.addEventListener("click", (e) => {
-  if (e.target.classList.contains("option")) {
+  if (e.target.classList.contains("option") && !(e.target.classList.contains('loading'))) {
     // Get the selected option's inner HTML
     const selectedOption = e.target.innerHTML;
 
@@ -136,6 +142,11 @@ quizOptions.addEventListener("click", (e) => {
         }
       });
     }
+    option.forEach((btn) => {
+      btn.classList.add('loading');
+      btn.innerHTML = "<span class='round'>&#8635;</span>";
+    })
+    questionBox.innerHTML = "<span class='round'>&#8635;</span>";
 
     // Reset the background color for all options after a short delay
     setTimeout(resetOptionBackground, 1000);
@@ -179,13 +190,12 @@ function increaseTime() {
 
 function cheatClicked() {
   if (!cheatUsed) {
-    // Stop the current timer
-    clearInterval(interval);
-
     // Highlight the correct answer
+    let count = 0;
     option.forEach((container) => {
-      if (container.innerHTML === correctAnswer) {
-        container.style.backgroundColor = "green";
+      if (container.innerHTML != correctAnswer && count < 2) {
+        container.style.backgroundColor = 'red';
+        count++;
       }
     });
 
@@ -193,19 +203,8 @@ function cheatClicked() {
     correctAnswersGiven++;
 
     // Set cheatUsed to true to prevent further use
-    cheat.style.opacity="0.5";
+    cheat.style.opacity = "0.5";
     cheatUsed = true;
-
-    // Reset the background color for all options after a short delay
-    setTimeout(() => {
-      resetOptionBackground();
-
-      // Fetch new question after resetting the timer
-      fetchData(
-        categoryMap[selectedCategory]
-        // Restart the timer with the original value after fetching a new question
-      );
-    }, 1000);
   }
 }
 

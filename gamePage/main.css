@@ -1,91 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
 .main {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(
-    to right,
-    rgb(15, 12, 41),
-    rgb(48, 43, 99),
-    rgb(36, 36, 62)
-  );
+  background-image: linear-gradient(to right,
+      rgb(15, 12, 41),
+      rgb(48, 43, 99),
+      rgb(36, 36, 62));
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
 }
+
 .quizBox {
-  width: 70vw;
-  height: 80vh;
-  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max(60vw, 600px);
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
 }
+
 .pageHead {
   text-align: center;
   font-size: 60px;
-  padding-top: 20px;
+  font-weight: 500;
 }
+
 .question {
+  width: 80%;
   text-align: center;
-  padding: 20px 20px 20px 20px;
-  font-size: 27px;
+  font-size: 25px;
+  padding-top: 15px;
 }
+
 .options {
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0px 50px;
   font-size: 25px;
   margin-top: 40px;
   text-align: center;
   gap: 40px;
 }
+
 .option {
-  padding: 20px 0px;
-  /* font-size: 26px; */
-  border: 2px solid black;
-  cursor: pointer;
-}
-.extra {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 20px;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  padding: 10px 15px;
+  backdrop-filter: blur(10px);
+  font-size: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.option:hover {
+  transform: scale(0.95);
+}
+
+.round {
+  animation: 5s roundRotate infinite linear;
+}
+
+@keyframes roundRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(3600deg);
+  }
+}
+
+.extra {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
   margin-top: 15px;
 }
+
 .powerUp {
   display: flex;
   align-items: center;
   gap: 15px;
   font-size: 20px;
 }
-.powerUp img {
-  width: 50px;
-  cursor: pointer;
+
+button {
+  border: none;
+  outline: none;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  color: #fffF;
 }
-.quit {
+
+.timeIncrease {
+  width: 50px;
+  height: 50px;
   font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.timeIncrease:hover {
+  transform: scale(0.98);
+}
+
+.cheat {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 7px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.cheat:hover {
+  transform: scale(0.98);
+}
+
+.quit,
+.newGame {
+  font-size: 20px;
+  width: 300px;
+  margin-block: 20px;
   padding: 7px 15px;
   cursor: pointer;
-  border-radius: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s linear;
+  justify-content: center;
+  align-items: center;
 }
-.time{
+
+.quit:hover {
+  transform: translateY(-2px) scale(0.97);
+}
+
+.time {
   font-size: 25px;
 }
+
 .score {
   text-align: center;
   display: none;
   font-size: 20px;
 }
+
 .newGame {
   display: none;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  font-size: 20px;
-  margin-top: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 10px;
 }

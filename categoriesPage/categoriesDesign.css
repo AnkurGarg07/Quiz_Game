@@ -1,57 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
 .main {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(
-    to right,
-    rgb(15, 12, 41),
-    rgb(48, 43, 99),
-    rgb(36, 36, 62)
-  );
+  background-image: linear-gradient(to right,
+      rgb(15, 12, 41),
+      rgb(48, 43, 99),
+      rgb(36, 36, 62));
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .categories {
-  width: 40vw;
-  height: 60vh;
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
+  padding: 20px;
   align-items: center;
 }
+
 .categories .playerWelcome {
-  padding-top: 10px;
-  font-size: 25px;
+  font-size: 40px;
   color: white;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
+
+.list-container {
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  padding: 20px 60px 30px 60px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .categoryHeading {
   width: 100%;
   font-size: 26px;
-  padding: 10px 0px;
-  text-align: center;
-  color: white;
+  font-weight: 600;
+  padding-bottom: 20px;
 }
+
 .categoryList {
-  width: 100%;
   list-style: none;
   text-align: center;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  margin-block: 10px;
+  padding-top: 10px;
+  font-weight: 500;
+  gap: 15px;
 }
-.categoryList .category{
-  height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 20px;
 
+.categoryList .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 40px;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px solid rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  transition: 0.3s linear;
+}
+
+.categoryList .category:hover {
+  transform: scale(0.95);
+  box-shadow: inset 2px -2px 4px solid rgba(0, 0, 0, 0.6);
 }
