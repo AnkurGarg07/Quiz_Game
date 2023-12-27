@@ -214,7 +214,7 @@ newGamebtn.addEventListener("click", startNewGame); //redirect you to home page
 timeIncreasePowerUp.addEventListener("click", increaseTime); //icrease time power up
 
 function quitGame() {
-  window.location.href = `../landingPage/index.html`;
+  window.location.href = `../index.html`;
 }
 
 function showResult(correct) {
@@ -223,5 +223,5 @@ function showResult(correct) {
 }
 
 function startNewGame() {
-  window.location.href = `../landingPage/index.html`;
+  window.location.href = `../index.html`;
 }
