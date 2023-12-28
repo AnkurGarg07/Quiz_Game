@@ -6,7 +6,7 @@ const redirectToCategories = () => {
   if (playerName.value == "") {
     alert("Please enter your name");
   } else {
-    window.location.href = `../categoriesPage/categories.html?username=${encodeURIComponent(playerName.value)}`;
+    window.location.href = `categoriesPage/categories.html?username=${encodeURIComponent(playerName.value)}`;
     playerName.value = "";
   }
 };
