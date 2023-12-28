@@ -214,14 +214,14 @@ newGamebtn.addEventListener("click", startNewGame); //redirect you to home page
 timeIncreasePowerUp.addEventListener("click", increaseTime); //icrease time power up
 
 function quitGame() {
-  window.location.href = `../index.html`;
+  window.location.href = `../indexPage/index.html`;
 }
 
 function showResult(correct) {
-  score.innerHTML = `Your score was ${correct}`;
+  score.innerHTML = `Your score was ${correct}/10`;
   score.style.display = "block";
 }
 
 function startNewGame() {
-  window.location.href = `../index.html`;
+  window.location.href = `../indexPage/index.html`;
 }

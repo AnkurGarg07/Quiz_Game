@@ -79,3 +79,27 @@
   transform: scale(0.95);
   box-shadow: inset 2px -2px 4px solid rgba(0, 0, 0, 0.6);
 }
+
+@media(width<768px){
+  .categories .playerWelcome {
+    font-size: 30px;
+  }
+  .list-container{
+    padding: 20px 30px 30px 30px;
+  }
+  .categoryList .category{
+    font-size: 15px;
+  }
+}
+@media(width<568px){
+  .categories{
+    padding: 10px;
+  }
+  .categoryHeading{
+    font-size: 22px;
+  }
+  .categories .playerWelcome {
+    font-size: 20px;
+    text-align: center;
+}
+}
